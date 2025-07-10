@@ -1,14 +1,15 @@
 /* General Styles */
 :root {
-    --primary-color: #0056b3;
-    --secondary-color: #6c757d;
+    --primary-color: #ffc107; /* Yellow from logo - now primary */
+    --secondary-color: #e31e24; /* Red from logo - now secondary */
     --light-color: #f8f9fa;
-    --dark-color: #343a40;
+    --dark-color: #333333; /* Dark gray from logo */
+    --gray-color: #c0bfbf; /* Gray from logo */
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    color: var(--dark-color);
 }
 
 .section-title {
@@ -27,20 +28,54 @@ body {
 /* Email Bar */
 .email-bar {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--dark-color);
 }
 
 .email-bar a {
-    color: white;
+    color: var(--dark-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.email-bar a:hover {
+    color: var(--secondary-color);
+}
+
+/* Media query for mobile */
+@media (max-width: 576px) {
+    .email-bar .container {
+        padding: 5px 15px;
+    }
+    
+    .email-bar .d-flex {
+        justify-content: center !important;
+    }
+    
+    .email-bar a {
+        font-size: 0.75rem;
+    }
 }
 
 /* Navbar */
 .navbar {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+    padding: 0;
 }
 
 .navbar-brand img {
-    max-height: 50px;
+    max-height: 70px;
+    width: auto;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        max-height: 60px;
+    }
 }
 
 .nav-link {
@@ -66,7 +101,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/hero-bg.jpg') no-repeat center center;
+    background: url('../img/hero-bg.jpeg') no-repeat center center;
     background-size: cover;
     opacity: 0.8;
     z-index: -1;
@@ -79,7 +114,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(51, 51, 51, 0.5); /* Dark gray with opacity */
     z-index: -1;
 }
 
@@ -95,6 +130,15 @@ body {
 
 .strength-item:hover {
     transform: translateY(-5px);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
 }
 
 /* Back to Top Button */
@@ -106,7 +150,7 @@ body {
     height: 40px;
     border-radius: 50%;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--dark-color);
     opacity: 0;
     transition: opacity 0.3s;
     z-index: 1000;
@@ -117,15 +161,36 @@ body {
 }
 
 .back-to-top:hover {
-    background-color: #004494;
-    color: white;
+    background-color: #e6ae00; /* Darker yellow */
+    color: var(--dark-color);
 }
 
 /* Responsive Tables */
 .table-responsive {
     border-radius: 5px;
-    overflow: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.table-responsive table {
+    margin-bottom: 0;
+}
+
+/* Add visual indicator only for chemical composition table */
+@media (max-width: 768px) {
+    .chemical-table::after {
+        content: "← Swipe →";
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--dark-color);
+        background-color: rgba(255, 193, 7, 0.1);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
 }
 
 /* Media Queries */
@@ -207,4 +272,593 @@ body {
 .modal-body img {
     width: 100%;
 }
+
+/* Footer with Contact Form Styles */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer .section-title {
+    color: white;
+}
+
+footer hr {
+    background-color: var(--gray-color);
+    opacity: 0.2;
+    height: 1px;
+    margin: 2rem 0;
+}
+
+.social-icon {
+    color: white;
+    transition: all 0.3s ease;
+    margin-right: 15px;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Form styling */
+#contactForm .form-control,
+#contactForm .form-select {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 10px 15px;
+}
+
+#contactForm .form-control:focus,
+#contactForm .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25); /* Yellow with opacity */
+}
+
+#contactForm .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    color: var(--dark-color);
+}
+
+#contactForm .btn-primary:hover {
+    background-color: #e6ae00; /* Darker yellow */
+    transform: translateY(-2px);
+}
+
+.country-code {
+    flex: 0 0 auto;
+    width: auto;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#phoneNumber {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    footer .ps-lg-5 {
+        padding-left: 0 !important;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .social-icon {
+        margin-right: 20px;
+    }
+}
+
+/* Accent sections */
+.bg-light {
+    background-color: #f9f9f9 !important;
+}
+
+.bg-accent {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Button styling */
+/* Stylish Contact Us button */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 12px 24px;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+    background-color: #e6ae00; /* Darker yellow */
+    border-color: #e6ae00;
+    color: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+}
+
+.btn-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-text-wrapper .fas.fa-arrow-right {
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+}
+
+.btn-primary:hover .fas.fa-arrow-right {
+    transform: translateX(4px);
+    opacity: 1;
+}
+
+/* Button pulse animation for hero section */
+.hero-section .btn-primary {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+    }
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+/* Carousel Styling */
+.carousel {
+    margin-bottom: 2rem;
+}
+
+.carousel-item {
+    transition: transform 0.6s ease;
+}
+
+/* Ensure consistent transition for all carousels */
+#markCarousel .carousel-item,
+#galleryCarousel .carousel-item,
+#certificateCarousel .carousel-item,
+#facilityCarousel .carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-indicators {
+    bottom: -10px;
+}
+
+.carousel-indicators button {
+    background-color: var(--gray-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 4px;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--primary-color);
+}
+
+/* Swipe hint for mobile carousels */
+@media (max-width: 768px) {
+    .carousel::after {
+        content: "← Swipe →";
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--dark-color);
+        margin-top: 10px;
+    }
+}
+
+/* Logo sizing */
+.logo-img {
+    max-height: 80px;
+    width: auto;
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        max-height: 70px;
+    }
+}
+
+/* Modal styling for contact form */
+#contactModal .modal-header {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    border-bottom: none;
+    padding: 1.25rem 1.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+#contactModal .modal-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+#contactModal .modal-content {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#contactModal .modal-body {
+    padding: 2rem;
+}
+
+#contactModal .btn-close {
+    color: var(--dark-color);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+#contactModal .btn-close:hover {
+    opacity: 1;
+}
+
+/* Form styling */
+#contactFormModal .form-control,
+#contactFormModal .form-select {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 12px 15px;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+#contactFormModal .form-control:focus,
+#contactFormModal .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+#contactFormModal .form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#contactFormModal .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    color: var(--dark-color);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+#contactFormModal .btn-primary:hover {
+    background-color: #e6ae00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* Contact info box */
+.contact-info-box {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    height: 100%;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-info-box h5 {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.contact-link {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+/* Social icons in modal */
+.social-icons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    color: var(--dark-color);
+    border-radius: 50%;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+}
+
+.social-icon-modal:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .contact-info-box {
+        margin-top: 2rem;
+    }
+}
+
+/* Enhanced Modal styling for contact form */
+#contactModal .modal-header {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    border-bottom: none;
+    padding: 1.25rem 1.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+#contactModal .modal-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+#contactModal .modal-content {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#contactModal .modal-body {
+    padding: 2rem;
+}
+
+#contactModal .btn-close {
+    color: var(--dark-color);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+#contactModal .btn-close:hover {
+    opacity: 1;
+}
+
+/* Form styling */
+#contactFormModal .form-control,
+#contactFormModal .form-select {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 12px 15px;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+#contactFormModal .form-control:focus,
+#contactFormModal .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    border-color: var(--primary-color);
+    background-color: #fff;
+}
+
+#contactFormModal .form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#contactFormModal .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    color: var(--dark-color);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+#contactFormModal .btn-primary:hover {
+    background-color: #e6ae00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+/* Contact info box */
+.contact-info-box {
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    height: 100%;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-info-box h5 {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.contact-link {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+/* Social icons in modal */
+.social-icons-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    color: var(--dark-color);
+    border-radius: 50%;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+}
+
+.social-icon-modal:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .contact-info-box {
+        margin-top: 2rem;
+    }
+}
+
+/* Mark Section Styling */
+.mark-item {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.mark-img {
+    max-height: 250px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.mark-img:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile carousel for marks */
+#markCarousel .carousel-item {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#markCarousel .mark-img {
+    max-height: 200px;
+    width: auto;
+    object-fit: contain;
+}
+
+#markCarousel .carousel-control-prev,
+#markCarousel .carousel-control-next {
+    z-index: 30;
+}
+
+#markCarousel .carousel-indicators {
+    z-index: 30;
+    bottom: -30px;
+}
+
+/* Facility main image height control */
+.facility-main-img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .facility-main-img {
+        max-height: 300px;
+    }
+}
+
+/* Laboratory images styling */
+.lab-img {
+    max-height: 120px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.lab-img:hover {
+    transform: scale(1.05);
+}
+
+/* Lab carousel for mobile */
+#labCarousel {
+    margin-bottom: 1rem;
+}
+
+#labCarousel .carousel-item {
+    height: 150px;
+}
+
+#labCarousel .lab-img {
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
+
+
+
+
+
 

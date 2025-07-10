@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raj Agro Industries - Spring Steel Specialists</title>
+    <link rel="icon" type="image/png" href="img/favicon.jpg">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -14,10 +15,15 @@
 <body>
     <!-- Email Bar -->
     <div class="email-bar py-1">
-        <div class="container d-flex justify-content-end align-items-center">
-            <a href="mailto:info@rajagro.com" class="text-decoration-none">
-                <i class="fas fa-envelope me-1"></i> info@rajagro.com
-            </a>
+        <div class="container">
+            <div class="d-flex justify-content-end justify-content-center-mobile">
+                <a href="tel:+919815150051" class="text-decoration-none me-3">
+                    <i class="fas fa-phone-alt me-1"></i> +91 98151 50051
+                </a>
+                <a href="mailto:rajagro51@gmail.com" class="text-decoration-none">
+                    <i class="fas fa-envelope me-1"></i> rajagro51@gmail.com
+                </a>
+            </div>
         </div>
     </div>
 
@@ -26,7 +32,7 @@
     <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Raj Agro Industries Logo" height="50">
+                <img src="img/logo.png" alt="Raj Agro Industries Logo" class="logo-img">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
                 <span class="navbar-toggler-icon"></span>
@@ -74,20 +80,21 @@
     <!-- Hero Section, About Us, Manufacturing, etc. will go here -->
     <!-- Hero Section -->
     <section id="home" class="hero-section position-relative">
-        <div class="marks-mobile d-block d-md-none">
-            <img src="img/marks.png" alt="Quality Marks" class="img-fluid">
-        </div>
-        
+
         <div class="hero-bg"></div>
         <div class="container position-relative">
             <div class="row min-vh-75 align-items-center py-5">
                 <div class="col-lg-8">
                     <h1 class="display-4 fw-bold text-white">Premium Spring Steel Flats Since 2001</h1>
                     <p class="lead text-white my-4">Delivering quality assured products with competitive pricing and time-bound delivery through our wide distribution network.</p>
-                    <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
-                </div>
-                <div class="col-lg-4 d-none d-md-block text-end">
-                    <img src="img/marks.png" alt="Quality Marks" class="img-fluid marks-desktop">
+                    <!-- Stylish Contact Us button for hero section -->
+                    <a href="#" class="btn btn-primary btn-lg btn-contact-us" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        <span class="btn-text-wrapper">
+                            <i class="fas fa-envelope-open me-2"></i>
+                            <span>Contact Us</span>
+                            <i class="fas fa-arrow-right ms-2"></i>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -107,7 +114,7 @@
                 <div class="col-12">
                     <div class="card border-0 bg-light">
                         <div class="card-body">
-                            <h3 class="text-primary mb-4">Our Strengths</h3>
+                            <h3 class="mb-4">Our Strengths</h3>
                             <div class="row g-4">
                                 <div class="col-md-3 col-12">
                                     <div class="strength-item text-center">
@@ -142,7 +149,7 @@
             <!-- Company History -->
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <img src="img/founder.jpg" alt="Company Founder" class="img-fluid rounded shadow">
+                    <img src="img/founder.png" alt="Company Founder" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-lg-7">
                     <h3 class="mb-3">Our Journey Since 2001</h3>
@@ -154,7 +161,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col-12 text-center">
-                    <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -178,34 +185,34 @@
             <!-- Facility Images - Grid for desktop, Carousel for mobile -->
             <div class="row d-none d-md-flex">
                 <div class="col-md-6 mb-4">
-                    <img src="img/facility1.jpg" alt="Manufacturing Facility" class="img-fluid rounded shadow">
+                    <img src="img/facility1.jpg" alt="Manufacturing Facility" class="img-fluid rounded shadow facility-main-img">
                 </div>
                 <div class="col-md-6 mb-4">
-                    <img src="img/facility2.jpg" alt="Manufacturing Facility" class="img-fluid rounded shadow">
+                    <img src="img/facility2.jpeg" alt="Manufacturing Facility" class="img-fluid rounded shadow facility-main-img">
                 </div>
-                <div class="col-md-6 mb-4">
+                <!--<div class="col-md-6 mb-4">
                     <img src="img/facility3.jpg" alt="Manufacturing Facility" class="img-fluid rounded shadow">
                 </div>
                 <div class="col-md-6 mb-4">
                     <img src="img/facility4.jpg" alt="Manufacturing Facility" class="img-fluid rounded shadow">
-                </div>
+                </div> -->
             </div>
             
             <!-- Mobile Carousel -->
-            <div id="facilityCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+            <div id="facilityCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-touch="true">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="img/facility1.jpg" class="d-block w-100 rounded shadow" alt="Manufacturing Facility">
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/facility2.jpg" class="d-block w-100 rounded shadow" alt="Manufacturing Facility">
+                     <div class="carousel-item">
+                        <img src="img/facility2.jpeg" class="d-block w-100 rounded shadow" alt="Manufacturing Facility">
                     </div>
-                    <div class="carousel-item">
+                    <!--<div class="carousel-item">
                         <img src="img/facility3.jpg" class="d-block w-100 rounded shadow" alt="Manufacturing Facility">
                     </div>
                     <div class="carousel-item">
                         <img src="img/facility4.jpg" class="d-block w-100 rounded shadow" alt="Manufacturing Facility">
-                    </div>
+                    </div> -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#facilityCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -215,10 +222,16 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#facilityCarousel" data-bs-slide-to="3"></button>
+                </div>
             </div>
             <div class="row mt-4">
                 <div class="col-12 text-center">
-                    <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -237,7 +250,7 @@
             <div class="row mb-5">
                 <div class="col-12">
                     <h4 class="text-center mb-3">CHEMICAL COMPOSITION OF SPRING STEEL FLATS</h4>
-                    <div class="table-responsive">
+                    <div class="table-responsive chemical-table">
                         <table class="table table-striped table-bordered">
                             <thead class="table-dark">
                                 <tr>
@@ -253,30 +266,118 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>51CrV4</td>
+                                    <td>0.47-0.55</td>
+                                    <td>0.70-1.10</td>
+                                    <td>0.15-0.40</td>
+                                    <td>0.025</td>
+                                    <td>0.025</td>
+                                    <td>0.90-1.20</td>
+                                    <td>Al: 0.04 max</td>
+                                </tr>
+                                <tr>
+                                    <td>EN 47A</td>
+                                    <td>0.45-0.55</td>
+                                    <td>0.50-0.80</td>
+                                    <td>0.50 max</td>
+                                    <td>0.05</td>
+                                    <td>0.05</td>
+                                    <td>0.80-1.20</td>
+                                    <td>V: 0.15 min</td>
+                                </tr>
+                                <tr>
+                                    <td>50CrV4</td>
+                                    <td>0.47-0.55</td>
+                                    <td>0.70-1.10</td>
+                                    <td>0.15-0.40</td>
+                                    <td>0.03</td>
+                                    <td>0.03</td>
+                                    <td>0.90-1.20</td>
+                                    <td>V: 0.10-0.25</td>
+                                </tr>
+                                <tr>
+                                    <td>SUP 11A</td>
+                                    <td>0.56-0.64</td>
+                                    <td>0.65-0.95</td>
+                                    <td>1.50-2.00</td>
+                                    <td>0.035</td>
+                                    <td>0.035</td>
+                                    <td>0.70-1.00</td>
+                                    <td>V: 0.10-0.20</td>
+                                </tr>
+                                <tr>
+                                    <td>SUP 9</td>
+                                    <td>0.56-0.60</td>
+                                    <td>0.65-0.95</td>
+                                    <td>1.50-2.00</td>
+                                    <td>0.035</td>
+                                    <td>0.035</td>
+                                    <td>0.65-0.95</td>
+                                    <td>B: 0.0005 min</td>
+                                </tr>
+                                <tr>
+                                    <td>SUP 6</td>
+                                    <td>0.50-0.60</td>
+                                    <td>0.70-1.00</td>
+                                    <td>1.50-2.00</td>
+                                    <td>0.045</td>
+                                    <td>0.045</td>
+                                    <td>0.20-0.40</td>
+                                    <td>Al: 0.04 max</td>
+                                </tr>
+                                <tr>
+                                    <td>60SiC7</td>
+                                    <td>0.55-0.65</td>
+                                    <td>0.70-1.00</td>
+                                    <td>1.50-2.00</td>
+                                    <td>0.045</td>
+                                    <td>0.045</td>
+                                    <td>0.20-0.40</td>
+                                    <td>Al: 0.04 max</td>
+                                </tr>
+                                <tr>
+                                    <td>65Si7</td>
+                                    <td>0.60-0.65</td>
+                                    <td>0.70-1.00</td>
+                                    <td>1.50-2.00</td>
+                                    <td>0.045</td>
+                                    <td>0.045</td>
+                                    <td>0.20-0.40</td>
+                                    <td>Al: 0.04 max</td>
+                                </tr>
+                                <tr>
+                                    <td>60Si7</td>
+                                    <td>0.55-0.65</td>
+                                    <td>0.70-1.00</td>
+                                    <td>1.50-2.00</td>
+                                    <td>0.045</td>
+                                    <td>0.045</td>
+                                    <td>0.20-0.40</td>
+                                    <td>Al: 0.04 max</td>
+                                </tr>
+                                <tr>
+                                    <td>65SiC7</td>
+                                    <td>0.60-0.65</td>
+                                    <td>0.70-1.00</td>
+                                    <td>1.50-2.00</td>
+                                    <td>0.045</td>
+                                    <td>0.045</td>
+                                    <td>0.20-0.40</td>
+                                    <td>Al: 0.04 max</td>
+                                </tr>
+                                <tr>
                                     <td>EN45A</td>
                                     <td>0.58-0.65</td>
                                     <td>0.80-1.00</td>
                                     <td>1.70-2.00</td>
-                                    <td>0.035</td>
-                                    <td>0.050</td>
+                                    <td>0.05</td>
+                                    <td>0.05</td>
                                     <td>0.20 max</td>
                                     <td></td>
                                 </tr>
-                                <tr>
-                                    <td>6SSiCr7</td>
-                                    <td>0.60-0.80</td>
-                                    <td>0.70-1.00</td>
-                                    <td>1.50-1.80</td>
-                                    <td>0.045</td>
-                                    <td>0.045</td>
-                                    <td>0.20-0.40</td>
-                                    <td></td>
-                                </tr>
-                                <!-- Additional rows omitted for brevity -->
                             </tbody>
                         </table>
                     </div>
-                    <p class="text-center mt-2">DI: 2.5" min as per ASTM A255</p>
                 </div>
             </div>
             
@@ -383,7 +484,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col-12 text-center">
-                    <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -400,34 +501,26 @@
             
             <!-- Desktop view - images in one line -->
             <div class="row d-none d-md-flex">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="mark-item text-center">
-                        <img src="img/mark1.jpg" alt="Quality Mark" class="img-fluid rounded shadow">
+                        <img src="img/mark1.webp" alt="Quality Mark" class="img-fluid rounded shadow mark-img">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="mark-item text-center">
-                        <img src="img/mark2.jpg" alt="Quality Mark" class="img-fluid rounded shadow">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="mark-item text-center">
-                        <img src="img/mark3.jpg" alt="Quality Mark" class="img-fluid rounded shadow">
+                        <img src="img/mark2.png" alt="Quality Mark" class="img-fluid rounded shadow mark-img">
                     </div>
                 </div>
             </div>
             
             <!-- Mobile view - slider -->
-            <div id="markCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+            <div id="markCarousel" class="carousel slide carousel-fade d-md-none" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="img/mark1.jpg" class="d-block w-100 rounded shadow" alt="Quality Mark">
+                        <img src="img/mark1.webp" class="d-block w-100 mark-img" alt="Quality Mark">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/mark2.jpg" class="d-block w-100 rounded shadow" alt="Quality Mark">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/mark3.jpg" class="d-block w-100 rounded shadow" alt="Quality Mark">
+                        <img src="img/mark2.png" class="d-block w-100 mark-img" alt="Quality Mark">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#markCarousel" data-bs-slide="prev">
@@ -438,6 +531,10 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#markCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#markCarousel" data-bs-slide-to="1"></button>
+                </div>
             </div>
         </div>
     </section>
@@ -451,36 +548,44 @@
                 </div>
             </div>
             
-            <!-- Desktop view - images in one line -->
-            <div class="row d-none d-md-flex">
-                <div class="col-md-4">
+            <!-- Desktop view - grid layout with 4 certificates -->
+            <div class="row g-4 d-none d-md-flex">
+                <div class="col-md-3">
                     <div class="certificate-item text-center">
-                        <img src="img/certificate1.jpg" alt="Certificate" class="img-fluid rounded shadow certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal1">
+                        <img src="img/certificate1.png" alt="Certificate" class="img-fluid rounded shadow certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal1">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="certificate-item text-center">
-                        <img src="img/certificate2.jpg" alt="Certificate" class="img-fluid rounded shadow certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal2">
+                        <img src="img/certificate2.png" alt="Certificate" class="img-fluid rounded shadow certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal2">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="certificate-item text-center">
-                        <img src="img/certificate3.jpg" alt="Certificate" class="img-fluid rounded shadow certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal3">
+                        <img src="img/certificate3.png" alt="Certificate" class="img-fluid rounded shadow certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal3">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="certificate-item text-center">
+                        <img src="img/certificate4.png" alt="Certificate" class="img-fluid rounded shadow certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal4">
                     </div>
                 </div>
             </div>
             
-            <!-- Mobile view - slider -->
+            <!-- Mobile view - slider with 4 certificates -->
             <div id="certificateCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="img/certificate1.jpg" class="d-block w-100 rounded shadow certificate-img" alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal1">
+                        <img src="img/certificate1.png" class="d-block w-100 rounded shadow certificate-img" alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal1">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/certificate2.jpg" class="d-block w-100 rounded shadow certificate-img" alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal2">
+                        <img src="img/certificate2.png" class="d-block w-100 rounded shadow certificate-img" alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal2">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/certificate3.jpg" class="d-block w-100 rounded shadow certificate-img" alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal3">
+                        <img src="img/certificate3.png" class="d-block w-100 rounded shadow certificate-img" alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/certificate4.png" class="d-block w-100 rounded shadow certificate-img" alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal4">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#certificateCarousel" data-bs-slide="prev">
@@ -491,6 +596,12 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#certificateCarousel" data-bs-slide-to="3"></button>
+                </div>
             </div>
             
             <!-- Certificate Modal Popups -->
@@ -502,7 +613,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="img/certificate1.jpg" alt="Certificate" class="img-fluid">
+                            <img src="img/certificate1.png" alt="Certificate" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -516,7 +627,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="img/certificate2.jpg" alt="Certificate" class="img-fluid">
+                            <img src="img/certificate2.png" alt="Certificate" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -530,7 +641,21 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="img/certificate3.jpg" alt="Certificate" class="img-fluid">
+                            <img src="img/certificate3.png" alt="Certificate" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal fade" id="certificateModal4" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Certificate</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/certificate4.png" alt="Certificate" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -575,7 +700,48 @@
                 <div class="col-md-6 mt-4 mt-md-0">
                     <div class="card border-0 shadow-sm h-100">
                         <div class="card-body d-flex flex-column">
-                            <div class="mb-5">
+                            <!-- Laboratory Image -->
+                            <div class="mb-4">
+                                <h4 class="card-title text-primary mb-3">Laboratory:</h4>
+                                
+                                <!-- Desktop view - images side by side -->
+                                <div class="row d-none d-md-flex">
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <img src="img/laboratory.jpg" alt="Laboratory" class="img-fluid mb-2 rounded shadow-sm lab-img">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="text-center">
+                                            <img src="img/laboratory2.jpg" alt="Laboratory Equipment" class="img-fluid mb-2 rounded shadow-sm lab-img">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mobile view - slider -->
+                                <div id="labCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="img/laboratory.jpg" class="d-block w-100 rounded shadow-sm lab-img" alt="Laboratory">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="img/laboratory2.jpg" class="d-block w-100 rounded shadow-sm lab-img" alt="Laboratory Equipment">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#labCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#labCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                
+                                <p class="mb-0 text-center mt-2">Testing Facility</p>
+                            </div>
+                            
+                            <div class="mb-1">
                                 <h4 class="card-title text-primary mb-3">Certified by:</h4>
                                 <div class="text-center">
                                     <img src="img/cirt-logo.png" alt="CIRT Logo" class="img-fluid mb-2" style="max-height: 80px;">
@@ -597,7 +763,7 @@
             
             <div class="row">
                 <div class="col-12 text-center">
-                    <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -617,27 +783,27 @@
                 <!-- Row 1 -->
                 <div class="col-md-3">
                     <div class="gallery-item">
-                        <img src="img/gallery1.jpg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal1">
+                        <img src="img/gallery1.jpeg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal1">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="gallery-item">
-                        <img src="img/gallery2.jpg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal2">
+                        <img src="img/gallery2.jpeg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal2">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="gallery-item">
-                        <img src="img/gallery3.jpg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+                        <img src="img/gallery3.jpeg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal3">
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="gallery-item">
-                        <img src="img/gallery4.jpg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal4">
+                        <img src="img/gallery4.jpeg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal4">
                     </div>
                 </div>
                 
                 <!-- Row 2 -->
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <div class="gallery-item">
                         <img src="img/gallery5.jpg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal5">
                     </div>
@@ -656,25 +822,25 @@
                     <div class="gallery-item">
                         <img src="img/gallery8.jpg" alt="Gallery Image" class="img-fluid rounded shadow gallery-img" data-bs-toggle="modal" data-bs-target="#galleryModal8">
                     </div>
-                </div>
+                </div> -->
             </div>
             
             <!-- Mobile view - Slider -->
             <div id="galleryCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="img/gallery1.jpg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal1">
+                        <img src="img/gallery1.jpeg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal1">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/gallery2.jpg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal2">
+                        <img src="img/gallery2.jpeg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal2">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/gallery3.jpg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+                        <img src="img/gallery3.jpeg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal3">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/gallery4.jpg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal4">
+                        <img src="img/gallery4.jpeg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal4">
                     </div>
-                    <div class="carousel-item">
+                   <!--  <div class="carousel-item">
                         <img src="img/gallery5.jpg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal5">
                     </div>
                     <div class="carousel-item">
@@ -685,7 +851,7 @@
                     </div>
                     <div class="carousel-item">
                         <img src="img/gallery8.jpg" class="d-block w-100 rounded shadow gallery-img" alt="Gallery Image" data-bs-toggle="modal" data-bs-target="#galleryModal8">
-                    </div>
+                    </div> -->
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -707,7 +873,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="img/gallery1.jpg" alt="Gallery Image" class="img-fluid">
+                            <img src="img/gallery1.jpeg" alt="Gallery Image" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -722,7 +888,35 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <img src="img/gallery2.jpg" alt="Gallery Image" class="img-fluid">
+                            <img src="img/gallery2.jpeg" alt="Gallery Image" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 3 -->
+            <div class="modal fade" id="galleryModal3" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Gallery Image</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/gallery3.jpeg" alt="Gallery Image" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 4 -->
+            <div class="modal fade" id="galleryModal4" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Gallery Image</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/gallery4.jpeg" alt="Gallery Image" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -733,20 +927,226 @@
             
             <div class="row mt-4">
                 <div class="col-12 text-center">
-                    <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+                    <a href="#" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Contact Modal - Enhanced Version -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">
+                        <i class="fas fa-envelope-open-text me-2"></i>Contact Us
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <form id="contactFormModal">
+                                <div class="mb-3">
+                                    <label for="fullNameModal" class="form-label">
+                                        <i class="fas fa-user text-primary me-2"></i>Full Name
+                                    </label>
+                                    <input type="text" class="form-control" id="fullNameModal" placeholder="Enter your full name" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="phoneNumberModal" class="form-label">
+                                        <i class="fas fa-phone-alt text-primary me-2"></i>Phone Number
+                                    </label>
+                                    <div class="input-group">
+                                        <select class="form-select country-code" style="max-width: 120px;">
+                                            <option value="+91" selected>+91 (IN)</option>
+                                            <option value="+1">+1 (US/CA)</option>
+                                            <option value="+44">+44 (UK)</option>
+                                            <option value="+61">+61 (AU)</option>
+                                            <option value="+86">+86 (CN)</option>
+                                        </select>
+                                        <input type="tel" class="form-control" id="phoneNumberModal" placeholder="Enter your phone number" pattern="[0-9]*" inputmode="numeric" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="companyNameModal" class="form-label">
+                                        <i class="fas fa-building text-primary me-2"></i>Company Name
+                                    </label>
+                                    <input type="text" class="form-control" id="companyNameModal" placeholder="Enter your company name">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="messageModal" class="form-label">
+                                        <i class="fas fa-comment-alt text-primary me-2"></i>Message
+                                    </label>
+                                    <textarea class="form-control" id="messageModal" rows="4" placeholder="How can we help you?" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Submit
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="contact-info-box">
+                                <h5 class="mb-3">
+                                    <i class="fas fa-map-marker-alt text-primary me-2"></i>Find Us
+                                </h5>
+                                <p>Mandi Gobindgarh, Punjab, India</p>
+                                
+                                <h5 class="mb-3 mt-4">
+                                    <i class="fas fa-phone-volume text-primary me-2"></i>Call Us
+                                </h5>
+                                <p><a href="tel:+919815150051" class="contact-link">+91 98151 50051</a></p>
+                                
+                                <h5 class="mb-3 mt-4">
+                                    <i class="fas fa-envelope-open text-primary me-2"></i>Email Us
+                                </h5>
+                                <p><a href="mailto:rajagro51@gmail.com" class="contact-link">rajagro51@gmail.com</a></p>
+                                
+                                <h5 class="mb-3 mt-4">
+                                    <i class="fas fa-share-alt text-primary me-2"></i>Connect With Us
+                                </h5>
+                                <div class="social-icons-container">
+                                    <a href="https://wa.me/919815150051" class="social-icon-modal" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                    <a class="social-icon-modal" target="_blank">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a href="https://instagram.com/raj_agroindustries" class="social-icon-modal" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Footer with Contact Form -->
+    <footer class="py-5 bg-dark text-white" id="contact">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="section-title text-white">Contact Us</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <div class="input-group">
+                                <select class="form-select country-code" style="max-width: 120px;">
+                                    <option value="+91" selected>+91 (IN)</option>
+                                    <option value="+1">+1 (US/CA)</option>
+                                    <option value="+44">+44 (UK)</option>
+                                    <option value="+61">+61 (AU)</option>
+                                    <option value="+86">+86 (CN)</option>
+                                    <!-- More country codes will be added via JavaScript -->
+                                </select>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter your phone number" pattern="[0-9]*" inputmode="numeric" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="companyName" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="companyName" placeholder="Enter your company name">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Submit</button>
+                    </form>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="ps-lg-5">
+                        <h4 class="mb-4">Connect With Us</h4>
+                        <p>Reach out to us for any inquiries about our spring steel products or services.</p>
+                        
+                        <div class="d-flex mb-4">
+                            <a href="https://wa.me/919815150051" class="me-3 social-icon" target="_blank">
+                                <i class="fab fa-whatsapp fa-2x"></i>
+                            </a>
+                            <a class="me-3 social-icon" target="_blank">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                            <a href="https://instagram.com/raj_agroindustries" class="social-icon" target="_blank">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Our Address</h5>
+                            <p>Mandi Gobindgarh, Punjab, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 bg-light opacity-25">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2021 RAJ AGRO INDUSTRIES. – All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
